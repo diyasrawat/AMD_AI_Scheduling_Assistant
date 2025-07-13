@@ -1,6 +1,7 @@
 # AMD_AI_Scheduling_Assistant
 
 Overview
+
 The AI Scheduling Agent is a Flask-based web application designed to automate meeting scheduling by parsing email content and checking attendee availability using the Google Calendar API. It integrates with an AI model (Qwen3-30B-A3B) to extract meeting details and processes attendees' schedules to find suitable time slots.
 Features
 
@@ -78,7 +79,6 @@ Send the request using a tool like curl or Postman:curl -X POST http://localhost
 
 
 
-
 Response:
 
 The server returns a JSON response with the list of attendees and the parsed meeting details (e.g., meeting summary, duration, and date range).
@@ -95,8 +95,6 @@ Example response:[
 
 
 
-
-
 Project Structure
 
 Submission.ipynb: Main Jupyter Notebook containing the application code.
@@ -110,22 +108,6 @@ find_token_files_with_emails: Maps email addresses to token files.
 get_user_availability: Retrieves available time slots for a user on a given date.
 getAttendeesAvailableSlots: Aggregates availability for multiple attendees.
 getTimeAndDateUsingEmail: Uses AI to parse email content and extract meeting details.
-
-
-
-Known Issues
-
-Datetime Error: The get_user_availability function contains an error where datetime.datetime is incorrectly used (e.g., datetime.datetime.combine). This needs to be fixed by removing the redundant datetime reference.
-Hardcoded Paths: The token file path (/home/user/Keys/) is hardcoded and may need adjustment for different environments.
-AI Model Dependency: The application relies on an external AI model API at http://localhost:8000/v1. Ensure this service is running and accessible.
-
-Future Improvements
-
-Fix the datetime.datetime error in the calendar functions.
-Enhance error handling for invalid token files or API connectivity issues.
-Implement logic to suggest alternative meeting slots when attendees are unavailable.
-Add support for multiple time zones beyond Asia/Kolkata.
-Containerize the application using Docker for easier deployment.
 
 License
 This project is licensed under the MIT License.
