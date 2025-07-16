@@ -1,6 +1,6 @@
 # AMD_AI_Scheduling_Assistant
 
-Overview
+Overview 
 
 The AI Scheduling Agent is a Flask-based web application designed to automate meeting scheduling by parsing email content and checking attendee availability using the Google Calendar API. It integrates with an AI model (Qwen3-30B-A3B) to extract meeting details and processes attendees' schedules to find suitable time slots.
 Features
